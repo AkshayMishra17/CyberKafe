@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "422530936948",
+    "project_id": "aakritienterprises-111ff",
+    "storage_bucket": "aakritienterprises-111ff.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422530936948:android:cec3b283ed404069f4e121",
+        "android_client_info": {
+          "package_name": "com.example.cyberkafe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMhEHBrrcz9jAQ5jemxd9HuqaXECbcAcg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
