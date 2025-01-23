@@ -1,20 +1,16 @@
 package com.example.cyberkafe.screen.home
 
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -41,14 +37,24 @@ fun FourthSection() {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.Center
         ) {
+            val context = LocalContext.current
+
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                MenuItem("About Us")
+                MenuItem("About Us") {
+                    openUrl(context, "https://cyberkafe.in/aboutus")
+                }
                 Spacer(modifier = Modifier.height(8.dp))
-                MenuItem("Contact")
+                MenuItem("Contact") {
+                    openUrl(context, "https://cyberkafe.in/contactus")
+                }
                 Spacer(modifier = Modifier.height(8.dp))
-                MenuItem("Privacy Policy")
+                MenuItem("Privacy Policy") {
+                    openUrl(context, "https://cyberkafe.in/privacypolicy")
+                }
                 Spacer(modifier = Modifier.height(8.dp))
-                MenuItem("Terms of Service")
+                MenuItem("Terms & Conditions") {
+                    openUrl(context, "https://cyberkafe.in/termsandconditions")
+                }
             }
         }
 
@@ -62,17 +68,20 @@ fun FourthSection() {
             modifier = Modifier.align(Alignment.CenterHorizontally)
         )
         Box(
-        modifier = Modifier.fillMaxWidth().padding(8.dp).background(Color.White)
-            .height(50.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+                .background(Color.White)
+                .height(50.dp),
             contentAlignment = Alignment.Center
-        ){
+        ) {
             Text("Crafted with ❤\uFE0F in Delhi")
         }
     }
 }
 
 @Composable
-fun MenuItem(menuText: String) {
+fun MenuItem(menuText: String, onClick: () -> Unit) {
     Text(
         text = menuText,
         style = TextStyle(
@@ -80,6 +89,11 @@ fun MenuItem(menuText: String) {
             color = Color.White,
             fontWeight = FontWeight.Normal
         ),
-        modifier = Modifier.clickable(onClick = { /* Handle click */ })
+        modifier = Modifier.clickable(onClick = onClick)
     )
+}
+
+fun openUrl(context: android.content.Context, url: String) {
+    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+    context.startActivity(intent)
 }

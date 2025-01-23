@@ -3,6 +3,8 @@ package com.example.cyberkafe.screen.services
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -17,6 +19,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 @Composable
 fun ScreenSecond() {
     val viewModel: ServicesViewModel = viewModel()
+    var searchQuery by remember { mutableStateOf("") }
 
     LaunchedEffect(Unit) {
         viewModel.fetchServices()
@@ -30,18 +33,53 @@ fun ScreenSecond() {
                         modifier = Modifier
                             .fillMaxWidth()
                     ) {
-                        Text(
-                            text = "Our Services",
-                            style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
-                            modifier = Modifier.align(Alignment.Center)
-                        )
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text(
+                                text = "Our Services",
+                                style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
+                                modifier = Modifier.weight(1f)
+                            )
+                            TextField(
+                                value = searchQuery,
+                                onValueChange = { searchQuery = it },
+                                placeholder = {
+                                    Text(
+                                        "Search...",
+                                        style = MaterialTheme.typography.bodyMedium.copy(color = Color.Gray)
+                                    )
+                                },
+                                leadingIcon = {
+                                    Icon(
+                                        imageVector = Icons.Default.Search,
+                                        contentDescription = "Search Icon",
+                                        tint = Color.Gray
+                                    )
+                                },
+                                singleLine = true,
+                                shape = MaterialTheme.shapes.medium,
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .height(56.dp)
+                                    .padding(horizontal = 8.dp),
+                                colors = TextFieldDefaults.textFieldColors(
+                                    containerColor = Color(0xFFFFDDEE),
+                                    cursorColor = Color.Black,
+                                    focusedIndicatorColor = Color(0xFFFF88CC),
+                                    unfocusedIndicatorColor = Color(0xFFCCCCCC)
+                                )
+                            )
+
+
+                        }
                     }
                 },
                 colors = TopAppBarDefaults.smallTopAppBarColors(
                     containerColor = Color(0xFFFFDDEE)
                 )
             )
-
         }
     ) { paddingValues ->
         Column(
@@ -63,11 +101,15 @@ fun ScreenSecond() {
                     )
                 }
                 else -> {
+                    val filteredServices = viewModel.servicesList.filter {
+                        it.header.contains(searchQuery, ignoreCase = true)
+                    }
+
                     LazyColumn(
                         contentPadding = PaddingValues(vertical = 8.dp),
                         verticalArrangement = Arrangement.spacedBy(16.dp)
                     ) {
-                        items(viewModel.servicesList) { service ->
+                        items(filteredServices) { service ->
                             ServiceCard(service = service)
                         }
                     }
@@ -82,7 +124,7 @@ fun ServiceCard(service: Service) {
     var showDocuments by remember { mutableStateOf(false) }
 
     val lightPink = Color(0xFFFFDDEE)
-   val darkTextColor = Color(0xFF333333)
+    val darkTextColor = Color(0xFF333333)
     val lightTextColor = Color(0xFF666666)
 
     Card(
