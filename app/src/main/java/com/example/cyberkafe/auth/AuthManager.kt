@@ -11,7 +11,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.example.cyberkafe.auth.AuthScreen
 import com.google.firebase.auth.FirebaseAuth
 
 @Composable

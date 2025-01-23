@@ -17,9 +17,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun SecondSection() {
+fun SecondSection(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -41,7 +42,7 @@ fun SecondSection() {
             )
             Spacer(modifier = Modifier.height(12.dp))
             ElevatedButton(
-                onClick = {},
+                onClick = {navController.navigate("screen_1")},
                 modifier = Modifier.padding(16.dp)
             ) {
                 Text(
