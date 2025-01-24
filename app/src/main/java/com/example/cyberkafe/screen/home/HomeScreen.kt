@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.cyberkafe.screen.home.testimonials.TestimonialsScreen
 
 @Composable
 fun HomeScreen(navController: NavController) {
@@ -18,6 +19,9 @@ fun HomeScreen(navController: NavController) {
     ) {
         item {
             TopSection()
+        }
+        item{
+            TestimonialsScreen()
         }
         item {
            SecondSection(navController = navController)
