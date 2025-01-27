@@ -1,4 +1,4 @@
-package com.example.cyberkafe.screen.home.testimonials
+package com.example.cyberkafe.screen.home.sections.testimonials
 
 data class Testimonials(
     val name:String = "",

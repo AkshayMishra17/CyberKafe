@@ -1,4 +1,4 @@
-package com.example.cyberkafe.screen.home.testimonials
+package com.example.cyberkafe.screen.home.sections.testimonials
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow

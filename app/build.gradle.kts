@@ -57,7 +57,9 @@ dependencies {
 
     //nav
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.navigation.compose.v260)
 
+    implementation(libs.ui)
 
 
     implementation(libs.androidx.material)

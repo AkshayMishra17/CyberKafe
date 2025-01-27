@@ -9,7 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.cyberkafe.screen.home.testimonials.TestimonialsScreen
+import com.example.cyberkafe.screen.home.sections.FourthSection
+import com.example.cyberkafe.screen.home.sections.SecondSection
+import com.example.cyberkafe.screen.home.sections.ThirdSection
+import com.example.cyberkafe.screen.home.sections.testimonials.TestimonialsScreen
 
 @Composable
 fun HomeScreen(navController: NavController) {

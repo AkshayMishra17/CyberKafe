@@ -21,7 +21,10 @@ class AuthViewModel(private val auth:FirebaseAuth):ViewModel() {
     val message: MutableStateFlow<String?>
         get() = _message
 
-fun signInUser(email: String, password: String, context: Context) {
+    private val _isUserAuthenticated = MutableStateFlow(false)
+    var isUserAuthenticated: StateFlow<Boolean> = _isUserAuthenticated
+
+    fun signInUser(email: String, password: String, context: Context) {
     viewModelScope.launch {
         _isLoading.value = true
         try {
@@ -38,8 +41,6 @@ fun signInUser(email: String, password: String, context: Context) {
         }
     }
 }
-
-
         fun signUpUser(email: String, password: String, context: Context) {
             viewModelScope.launch {
                 _isLoading.value = true

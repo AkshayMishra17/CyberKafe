@@ -1,4 +1,4 @@
-package com.example.cyberkafe.screen.home
+package com.example.cyberkafe.screen.home.sections
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column

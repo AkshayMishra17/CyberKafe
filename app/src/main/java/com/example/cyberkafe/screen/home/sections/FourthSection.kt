@@ -1,4 +1,4 @@
-package com.example.cyberkafe.screen.home
+package com.example.cyberkafe.screen.home.sections
 
 import android.content.Intent
 import android.net.Uri

@@ -3,7 +3,6 @@ package com.example.cyberkafe.nav
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
@@ -26,11 +25,11 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.BottomAppBar
-import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.rounded.Info
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.navigation.NavHostController
+
 @Composable
 fun BottomNavigationBar(navController: NavHostController) {
     val gradientAnim = remember { Animatable(0f) }
