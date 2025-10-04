@@ -53,7 +53,7 @@ fun CyberKafeNav() {
                 ScreenThird()
             }
             composable(Screen.Chat.route){
-                ChatScreen()
+                ChatScreen(navController)
             }
         }
     }
