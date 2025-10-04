@@ -29,6 +29,7 @@ import androidx.compose.material.icons.rounded.Info
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.navigation.NavHostController
+import com.example.cyberkafe.chat.view.ChatScreen
 
 @Composable
 fun BottomNavigationBar(navController: NavHostController) {
@@ -82,37 +83,4 @@ fun BottomNavigationBar(navController: NavHostController) {
     }
 }
 
-
-@Composable
-fun CyberKafeNav() {
-    val navController = rememberNavController()
-
-    Scaffold(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(bottom = 10.dp)
-            .background(Color.Transparent),
-        bottomBar = {
-            BottomNavigationBar(navController = navController)
-        }
-    ) { paddingValues ->
-        NavHost(
-            navController = navController,
-            startDestination = "home",
-            modifier = Modifier
-                .padding(paddingValues)
-                .background(Color.Transparent)
-        ) {
-            composable("home") {
-                HomeScreen(navController = navController)
-            }
-            composable("screen_1") {
-                ScreenSecond()
-            }
-            composable("screen_2") {
-                ScreenThird()
-            }
-        }
-    }
-}
 
