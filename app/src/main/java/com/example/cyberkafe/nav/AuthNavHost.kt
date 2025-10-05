@@ -14,7 +14,6 @@ fun AppNavHost(navController: NavHostController, auth: FirebaseAuth) {
             AuthManager(navController = navController, auth = auth)
         }
         composable(Screen.Home.route) {
-//            HomeScreen(navController = navController)
               CyberKafeNav()
         }
     }
