@@ -31,6 +31,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             CyberKafeTheme {
                 var showSplashScreen by remember {   mutableStateOf(true)}
+                val navController = rememberNavController()
+
                 LaunchedEffect(Unit) {
                     kotlinx.coroutines.delay(2000)
                     showSplashScreen = false
@@ -40,7 +42,6 @@ class MainActivity : ComponentActivity() {
                         showSplashScreen = false
                     }
                 } else {
-                    val navController = rememberNavController()
                     AppNavHost(navController = navController, auth = firebaseAuth)
                 }
             }

@@ -10,7 +10,15 @@ import com.google.firebase.auth.FirebaseAuth
 
 @Composable
 fun AppNavHost(navController: NavHostController, auth: FirebaseAuth) {
-    NavHost(navController = navController, startDestination = Screen.Auth.route) {
+    val currentUser = auth.currentUser
+
+    val startDestination:String = if(currentUser == null){
+        Screen.Auth.route
+    }else{
+        Screen.Home.route
+    }
+
+    NavHost(navController = navController, startDestination = startDestination) {
         composable(Screen.Auth.route) {
             AuthManager(navController = navController, auth = auth)
         }

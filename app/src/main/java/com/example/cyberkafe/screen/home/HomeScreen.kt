@@ -24,7 +24,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.cyberkafe.nav.Screen
 import com.example.cyberkafe.screen.home.sections.BottomSection
 import com.example.cyberkafe.screen.home.sections.ServicesSection
 import com.example.cyberkafe.screen.home.sections.SubscriberSection
@@ -35,7 +34,7 @@ import com.example.cyberkafe.screen.home.sections.testimonials.TestimonialsScree
 fun HomeScreen(navController: NavController) {
     Scaffold(
         topBar = {
-            TopBar(navController)
+//            TopBar(navController)
         },
        modifier = Modifier.windowInsetsPadding(WindowInsets.statusBars)
     ){ innerPadding ->
