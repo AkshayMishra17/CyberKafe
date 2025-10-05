@@ -36,7 +36,9 @@ class MainActivity : ComponentActivity() {
                     showSplashScreen = false
                 }
                 if (showSplashScreen) {
-                    SplashScreen()
+                    SplashScreen{
+                        showSplashScreen = false
+                    }
                 } else {
                     val navController = rememberNavController()
                     AppNavHost(navController = navController, auth = firebaseAuth)
