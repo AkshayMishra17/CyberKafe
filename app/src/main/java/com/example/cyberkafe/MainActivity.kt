@@ -35,12 +35,12 @@ class MainActivity : ComponentActivity() {
                     kotlinx.coroutines.delay(2000)
                     showSplashScreen = false
                 }
-//                if (showSplashScreen) {
-//                    SplashScreen()
-//                } else {
+                if (showSplashScreen) {
+                    SplashScreen()
+                } else {
                     val navController = rememberNavController()
                     AppNavHost(navController = navController, auth = firebaseAuth)
-//                }
+                }
             }
         }
     }
