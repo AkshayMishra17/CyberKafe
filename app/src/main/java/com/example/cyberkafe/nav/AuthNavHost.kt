@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.cyberkafe.auth.AuthManager
+import com.example.cyberkafe.chat.view.ChatScreen
 import com.google.firebase.auth.FirebaseAuth
 
 @Composable

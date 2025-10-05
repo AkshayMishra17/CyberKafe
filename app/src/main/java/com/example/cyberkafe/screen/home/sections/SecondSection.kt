@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun SecondSection(navController: NavController) {
+fun ServicesSection(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()

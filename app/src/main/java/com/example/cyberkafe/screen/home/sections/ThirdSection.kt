@@ -37,7 +37,7 @@ import com.google.firebase.firestore.firestore
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ThirdSection() {
+fun SubscriberSection() {
     var email by remember { mutableStateOf("") }
     val context = LocalContext.current
     val firestore = Firebase.firestore

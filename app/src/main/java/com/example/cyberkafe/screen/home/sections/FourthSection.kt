@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun FourthSection() {
+fun BottomSection() {
     Column(
         modifier = Modifier
             .fillMaxWidth()

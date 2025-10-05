@@ -41,6 +41,8 @@ class AuthViewModel(private val auth:FirebaseAuth):ViewModel() {
         }
     }
 }
+
+
         fun signUpUser(email: String, password: String, context: Context) {
             viewModelScope.launch {
                 _isLoading.value = true
